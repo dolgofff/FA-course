@@ -14,19 +14,17 @@ int poww(double arg,double deg){
 
 int kolhoz_atoi(char* s_input){
     int c_output = 0;
-    int temp=0;
     while(*s_input){
-        temp=c_output;
-        if(isdigit(*s_input)==0){
+        if(!isdigit(*s_input)){
             printf("Input error:Please,enter the integer value\n");
             return 0;
         }
         c_output=(c_output * 10) + (*s_input - '0');
-        if(c_output<temp){
-            printf("Input error:Please,enter the smaller number");
+        if(c_output>INT_MAX/10){
+            printf("Input error:Please,enter the smaller number\n");
             return 0;
         }
-        s_input++;
+            *s_input++;
     }
     return c_output;
 }
@@ -123,7 +121,8 @@ void func_f(int inp){
             fact = fact * i;
         }
     }
-    printf("%Id",fact);
+    printf("%Id\n",fact);
+
 }
 int main(int argc,char* argv[]){
     if(argc!=3){
@@ -133,32 +132,31 @@ int main(int argc,char* argv[]){
 
     int num=0;
     num= kolhoz_atoi(argv[1]);
-
-    if((argv[2][0]=='/')||(argv[2][0]=='-')){
-        if(argv[2][1]=='h'){
-            func_h(num);
-        }
-        else if(argv[2][1]=='p'){
-            func_p(num);
-        }
-        else if(argv[2][1]=='s'){
-            func_s(num);
-        }
-        else if(argv[2][1]=='e'){
-            func_e(num);
-        }
-        else if(argv[2][1]=='a'){
-            func_a(num);
-        }
-        else if(argv[2][1]=='f'){
-            func_f(num);
-        }
-        else{
-            printf("Input error:Use the correct argument('h','p','s','e','a','f')\n");
-        }
-    }
-    else{
-        printf("Input error:Use the correct first symbol('/' or '-')\n");
-    }
+         if(num!=0) {
+             if ((argv[2][0] == '/') || (argv[2][0] == '-')) {
+                 if (argv[2][1] == 'h') {
+                     func_h(num);
+                 } else if (argv[2][1] == 'p') {
+                     func_p(num);
+                 } else if (argv[2][1] == 's') {
+                     func_s(num);
+                 } else if (argv[2][1] == 'e') {
+                     func_e(num);
+                 } else if (argv[2][1] == 'a') {
+                     func_a(num);
+                 } else if (argv[2][1] == 'f') {
+                     func_f(num);
+                 } else {
+                     printf("Input error:Use the correct argument('h','p','s','e','a','f')\n");
+                     return 0;
+                 }
+             } else {
+                 printf("Input error:Use the correct first symbol('/' or '-')\n");
+                 return 0;
+             }
+         }
+         else{
+             return 0;
+         }
     return 0;
 }
