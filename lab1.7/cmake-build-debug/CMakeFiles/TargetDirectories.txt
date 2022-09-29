@@ -1,0 +1,3 @@
+C:/Users/Sergey/CLionProjects/FA-course/lab1.7/cmake-build-debug/CMakeFiles/lab1_7.dir
+C:/Users/Sergey/CLionProjects/FA-course/lab1.7/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Sergey/CLionProjects/FA-course/lab1.7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
