@@ -7,7 +7,7 @@ typedef struct aorta{
 }aorta;
 int mn_v(int vertex,...){
     int x1,y1,x2,y2,product,temp_sign,temp;
-    //аргументов будет в 2 раза меньше из-за struct
+    //x2 less arguments than in input
     int j=vertex/2;
     aorta frame[j];
     if (vertex%2==0 && vertex > 5){
@@ -19,10 +19,10 @@ int mn_v(int vertex,...){
         }
         va_end(l);
         for (int i=0;i<j;i++){
-            //по абсциссе
+            //absciss
             x1=frame[(i+1)%j].x-frame[i%j].x;
             x2 = frame[(i+2)%j].x-frame[i%j].x;
-            //по ординате
+            //ordinate
             y1=frame[(i+1)%j].y-frame[i%j].y;
             y2=frame[(i+2)%j].y-frame[i%j].y;
 
