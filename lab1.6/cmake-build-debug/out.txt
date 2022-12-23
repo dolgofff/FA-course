@@ -1,0 +1,3 @@
+Number: 100, Minimal Scale: 2, In decimal: 4
+Number: 200, Minimal Scale: 3, In decimal: 18
+Number: 212, Minimal Scale: 3, In decimal: 23
